@@ -1,0 +1,136 @@
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+    
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+            "header header header"
+            "navigation main-content sidebar"
+            "footer footer footer";
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+        }
+    
+        .header {
+            grid-area: header;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .navigation {
+            grid-area: navigation;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+    
+        .navigation h3 {
+            color: #fff;
+        }
+    
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        .navigation ul li {
+            margin: 10px 0;
+        }
+    
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .main-content {
+            grid-area: main-content;
+            padding: 40px;
+            background-color: #fff;
+        }
+    
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    
+        .footer {
+            grid-area: footer;
+            background-color: #09e247;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    <header class="header">My Sample Webpage Layout Using CSS Grid</header>
+    <nav class="navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="Introduction">Introduction</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Benefits</a></li>
+        <li><a href="#">Applications</a></li>
+        <li><a href="#">Conclusion</a></li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <h2>Introduction</h2>
+      <p>CSS Grid Layout is a modern technique used to design two-dimensional layouts on the web. It helps in placing elements into rows and columns efficiently and cleanly.</p>
+        <h2>Features</h2>
+        <p>CSS Grid offers a range of features that make it powerful:</p>
+        <ul>
+            <li>Two-dimensional layout control</li>
+            <li>Responsive design capabilities</li>
+            <li>Grid areas for easy placement of elements</li>
+            <li>Flexible sizing with fractions (fr) and auto</li>
+        </ul>
+        <h2>Benefits</h2>
+        <p>Using CSS Grid provides several benefits:</p>
+        <ul>
+            <li>Improved layout consistency</li>
+            <li>Reduced need for floats and positioning hacks</li>
+            <li>Better performance with fewer DOM elements</li>
+            <li>Enhanced maintainability of code</li>
+        </ul>
+        <h2>Applications</h2>
+        <p>CSS Grid can be applied in various scenarios:</p>
+        <ul>
+            <li>Websites with complex layouts</li>
+            <li>Responsive designs that adapt to different screen sizes</li>
+            <li>Dashboards and data visualization tools</li>
+            <li>Grid-based image galleries</li>
+        </ul>
+        
+      
+      <h2>Conclusion</h2>
+      <p>CSS Grid is an essential tool for any modern front-end developer. Its clear syntax, two-dimensional design control, and power to create responsive, maintainable layouts make it one of the best layout techniques available.</p>
+    </main>
+
+    <aside class="sidebar">
+      <h3>Sidebar</h3>
+      <p><strong>Note:</strong> Don't forget to revise all CSS Grid properties:</p>
+      <ul>
+        <li>grid-template-areas</li>
+        <li>grid-template-columns</li>
+        <li>grid-area</li>
+        <li>gap</li>
+      </ul>
+      <p>Contact: teacher@example.com</p>
+    </aside>
+
+    <footer class="footer">© 2025 Web Design Lab. All rights reserved.</footer>
+  </div>
+
+</body>
+</html>
