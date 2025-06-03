@@ -1,220 +1,152 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            .grid{
-                display: grid;
-                background-color: aliceblue;
-                grid-template-areas: 
-                "header header header"
-                "navigation content sidebar"
-                "footer footer footer";
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: 100px 3500px 100px;
-                overflow-x: auto;
-                gap: 15px;
-                padding: 10px;
-            }
-            .header{
-                grid-area: header;
-                background-color: blueviolet;
-                padding: 5px;
-            }
-            .header{
-                font-family: cursive;
-                color: azure;
-                text-align: center;
-            }
-            .navigation{
-                grid-area: navigation;
-                background-color: chocolate;
-                padding: 15px;
-            }
-            .navigation h2{
-                color:lavender;
-                font-family: cursive;
-                font-size: 35px;
-            }
-            .navigation ul{
-                list-style: none;
-            }
-            .navigation a{
-                text-decoration: none;
-                color: black;
-                font-size: 20px;
-            }
-            .navigation li{
-                margin-bottom: 20px;
-            }
-            .content{
-                grid-area: content;
-                background-color: crimson;
-                padding: 15px;
-            }
-            .content h3{
-                color: cornsilk;
-                font-family: cursive;
-                font-size: 30px;
-            }
-            .content p{
-                color: rgb(13, 13, 14);
-                font-size: 20px;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            .content ul{
-                list-style: square;
-                color: rgb(13, 13, 14);
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 20px;
-            }
-            .content li{
-                margin-bottom: 5px;
-            }
-            .content h4{
-                color: lavender;
-                font-family: serif;
-                font-size: 25px;
-            }
-            .sidebar{
-                grid-area: sidebar;
-                background-color: darkmagenta;
-                padding: 10px;
-            }
-            .sidebar h2{
-                color:lavender;
-                font-family: cursive;
-                font-size: 35px;
-            }
-            .sidebar ul{
-                font-size: 20px;
-            }
-            .sidebar h4{
-                font-size: 20px;
-            }
-            .sidebar p{
-                font-size: 20px;
-            }
-            .footer{
-                grid-area: footer;
-                background-color:darkslateblue ;
-                padding: 10px;
-            }
-            .footer p{
-                font-size: 20px;
-                text-align: center;
-                padding: 10px;
-            }
-            @media (max-width: 768px) {
-                .grid {
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+    
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+            "header header header"
+            "navigation main-content sidebar"
+            "footer footer footer";
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+        }
+    
+        .header {
+            grid-area: header;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .navigation {
+            grid-area: navigation;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+    
+        .navigation h3 {
+            color: #fff;
+        }
+    
+        .navigation ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        .navigation ul li {
+            margin: 10px 0;
+        }
+    
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .main-content {
+            grid-area: main-content;
+            padding: 40px;
+            background-color: #fff;
+        }
+    
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    
+        .footer {
+            grid-area: footer;
+            background-color: #09e247;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        @media (max-width: 768px) {
+                .grid-container {
                     grid-template-areas:
                       "header"
                       "navigation"
-                      "content"
+                      "main-content"
                       "sidebar"
                       "footer";
                     grid-template-columns: 1fr; /* single column layout */
                 }
             }
-        </style>
-    </head>
-    <body>
-        <div class="grid">
-            <div class="header">
-                <h1>Internet of Things</h1>
-            </div>
-            <div class="navigation">
-                <h2>Contents</h2>
-                <ul>
-                    <li><a href="#iot">What is IOT?</a></li>
-                    <li><a href="#eg">Examples of IOT</a></li>
-                    <li><a href="#app">Applications of IOT</a></li>
-                    <li><a href="#working">Working with IOT devices</a></li>
-                    <li><a href="#adv">Advantages of IOT</a></li>
-                    <li><a href="#Dis">Disadvantages of IOT</a></li>
-                </ul>
-            </div>
-            <div class="content">
-                <div class="bar">
-                <section id="iot">
-                    <h3>What is IOT?</h3>
-                    <p>The Internet of Things (IoT) is a network of physical objects that are connected to the internet and can communicate with each other and with other devices. IoT devices, also known as "smart objects“.</p>
-                </section>
-                <section id="eg">
-                    <h3>Examples of IOT:</h3>
-                    <ul>
-                        <li>Connected cars.</li>
-                        <li>Smart appliances.</li>
-                        <li>Connected security systems.</li>
-                        <li>Smart agriculture equipment.</li>
-                        <li>Connected retail.</li>
-                        <li>Connected healthcare monitors.</li>
-                        <li>Connected manufacturing equipment.</li>
-                        <li>Connected cities.</li>
-                    </ul>
-                </section>
-                <section id="app">
-                    <h3>Applications of IOT:</h3>
-                    <h4>1.Smart Home Applications:</h4>
-                    <p>Smart homes are a key IoT application. Examples include Mark Zuckerberg's AI home automation and Alan Pan's system using musical notes for in-house functions.</p>
-                    <h4>2.Wearables:</h4>
-                    <p>Wearable technology, an early adopter of IoT, includes devices like Fitbits, heart rate   monitors, and smartwatches. The Guardian glucose monitoring device helps diabetics by detecting glucose levels with a sensor under the skin and transmitting data via radiofrequency.</p>
-                    <h4>3.Hacked Car:</h4>
-                    <p>Connected cars use Internet and WAN networks, offering benefits like infotainment, advanced navigation, and improved fuel efficiency.</p>
-                    <h4>4.Health care:</h4>
-                    <p>IoT transforms reactive medical systems into proactive wellness systems by enhancing device power, precision, and availability. IoT-enabled care devices collect real-world data to improve healthcare systems beyond just tools</p>
-                </section>
-                <section id="working">
-                    <h3>Working with IoT Devices:</h3>
-                    <h4>Collect and Transmit Data : </h4>
-                    <p>Sensors are used in various applications to collect and transmit data based on specific requirements.</p>
-                    <h4>Actuate device based on triggers produced by sensors or processing devices:</h4>
-                    <p>Actuator devices perform actions when certain conditions or user-defined triggers are met.</p>
-                    <h4>Receive Information: </h4>
-                    <p>Devices or users can receive information from the network for analysis and processing.</p>
-                    <h4>Communication Assistance:</h4>
-                    <p>This involves communication between two networks or IoT devices across the same or different networks. It is facilitated by protocols like MQTT, CoAP, ZigBee, FTP, and HTTP.</p>
-                </section>
-                <section id="adv">
-                    <h3>Advantages of IOT:</h3>
-                    <ul>
-                        <li>Improved efficiency and automation of tasks.</li>
-                        <li>Increased convenience and accessibility of information.</li>
-                        <li>Better monitoring and control of devices and systems.</li>
-                        <li>Greater ability to gather and analyze data.</li>
-                        <li>Improved decision-making.</li>
-                        <li>Cost savings.</li>
-                    </ul>
-                </section>
-                <section id="Dis">
-                    <h3>Disadvantages of IOT</h3>
-                    <ul>
-                        <li>Security concerns and potential for hacking or data breaches.</li>
-                        <li>Privacy issues related to the collection and use of personal data.</li>
-                        <li>Dependence on technology and potential for system failures.</li>
-                        <li>Limited standardization and interoperability among devices.</li>
-                        <li>Complexity and increased maintenance requirements.</li>
-                        <li>High initial investment costs.</li>
-                        <li>Limited battery life on some devices.</li>
-                        <li>Concerns about job displacement due to automation.</li>
-                    </ul>
-                </section>
-            </div>
-            </div>
-            <div class="sidebar">
-                <h2>Sidebar</h2>
-                <h4>Note:</h4><p>This is the essay contents of IOT topic.</p>
-                <ul>
-                    <li>IOT with examples</li>
-                    <li>Applications</li>
-                    <li>Working</li>
-                    <li>Advantages</li>
-                    <li>Disadvantages</li>
-                </ul>
-                <p>Contact: madhu10@example.com</p>
-            </div>
-            <div class="footer">
-                <p>@ IOT content</p>
-            </div>
-        </div>
-    </body>
+            
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    <header class="header">My Sample Webpage Layout Using CSS Grid</header>
+    <nav class="navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="Introduction">Introduction</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Benefits</a></li>
+        <li><a href="#">Applications</a></li>
+        <li><a href="#">Conclusion</a></li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <h2>Introduction</h2>
+      <p>CSS Grid Layout is a modern technique used to design two-dimensional layouts on the web. It helps in placing elements into rows and columns efficiently and cleanly.</p>
+        <h2>Features</h2>
+        <p>CSS Grid offers a range of features that make it powerful:</p>
+        <ul>
+            <li>Two-dimensional layout control</li>
+            <li>Responsive design capabilities</li>
+            <li>Grid areas for easy placement of elements</li>
+            <li>Flexible sizing with fractions (fr) and auto</li>
+        </ul>
+        <h2>Benefits</h2>
+        <p>Using CSS Grid provides several benefits:</p>
+        <ul>
+            <li>Improved layout consistency</li>
+            <li>Reduced need for floats and positioning hacks</li>
+            <li>Better performance with fewer DOM elements</li>
+            <li>Enhanced maintainability of code</li>
+        </ul>
+        <h2>Applications</h2>
+        <p>CSS Grid can be applied in various scenarios:</p>
+        <ul>
+            <li>Websites with complex layouts</li>
+            <li>Responsive designs that adapt to different screen sizes</li>
+            <li>Dashboards and data visualization tools</li>
+            <li>Grid-based image galleries</li>
+        </ul>
+        
+      
+      <h2>Conclusion</h2>
+      <p>CSS Grid is an essential tool for any modern front-end developer. Its clear syntax, two-dimensional design control, and power to create responsive, maintainable layouts make it one of the best layout techniques available.</p>
+    </main>
+
+    <aside class="sidebar">
+      <h3>Sidebar</h3>
+      <p><strong>Note:</strong> Don't forget to revise all CSS Grid properties:</p>
+      <ul>
+        <li>grid-template-areas</li>
+        <li>grid-template-columns</li>
+        <li>grid-area</li>
+        <li>gap</li>
+      </ul>
+      <p>Contact: teacher@example.com</p>
+    </aside>
+
+    <footer class="footer">© 2025 Web Design Lab. All rights reserved.</footer>
+  </div>
+
+</body>
 </html>
